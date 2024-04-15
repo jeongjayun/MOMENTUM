@@ -11,11 +11,12 @@ function saveToDos() {
 }
 
 function deleteTodo(event) {
+  //todo 삭제
   // console.log(event.target.parentElement.innerText);
   const li = event.target.parentElement;
-  li.remove();
+  li.remove(); // client에서 안보이게
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-  saveToDos();
+  saveToDos(); //localStorage에 반영
 }
 
 function paintTodo(newTodo) {
@@ -43,7 +44,7 @@ function handleToDoSubmit(event) {
   toDoInput.value = "";
   const newTodoObj = {
     text: newTodo,
-    id: Date.now(),
+    id: Date.now()
   };
   toDos.push(newTodoObj);
   paintTodo(newTodoObj);
@@ -59,8 +60,4 @@ if (savedToDos !== null) {
   console.log(parsedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintTodo);
-}
-
-function goodFilter() {
-  //반드시 true를 return 해야한다.
 }

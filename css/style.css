@@ -55,6 +55,8 @@ img {
   text-align: center;
   font-size: 48px;
   margin: 0 auto;
+  color: white;
+  text-shadow: 3px 4px 5px #888;
 }
 
 #login-form input[type="submit"],
@@ -97,9 +99,11 @@ form {
   border-radius: 20px;
 }
 
+#todo-form input[type="text"]:focus,
 #todo-form input[type="text"]:hover {
   background-color: white;
   opacity: 80%;
+  border: none;
   transition: 0.3s;
 }
 
